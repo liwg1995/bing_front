@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <thead>
+        <tr>
+            <th>日期</th>
+            <th>bing链接</th>
+            <th>七牛链接</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for bing in bings %}
+        <tr>
+            <th>{{ bing.dates }}</th>
+            <th>{{ bing.bing_url }}</th>
+            <th>{{ bing.qiniu_url }}</th>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

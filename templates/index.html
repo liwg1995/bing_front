@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>bing每日美图分享</title>
+<link rel="shortcut icon" href="https://resources.olei.me/favicon.ico">
+{% load static %}
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+<style>
+    .alpha1{filter: Alpha(Opacity=60)}
+    body 
+	{background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;}
+    .center {
+        width: 70%;
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100px;
+        line-height: 50px;
+
+        overflow:hidden;
+{#        top: 50%;#}
+{#        position: absolute;#}
+{#        height: 240px;#}
+{#        margin-top: -120px;#}
+{#        height: 100px;#}
+{#        line-height: 100%;#}
+    }
+
+    {#    .text-center {#}
+    {#        text-align: center;#}
+    {#    }#}
+
+
+</style>
+</head>
+<body background="https://cdn.24bp.cn/bk/api/PC.php">
+<div class="center">
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+	bing每日精美壁纸&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   |  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	<div class="btn-group">
+  <button type="button" class="btn btn-danger">友情链接</button>
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="caret"></span>
+    <span class="sr-only">友情链接</span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="https://olei.me" target="_blank">禹都一只猫🐈</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="https://music.olei.me" target="_blank">音乐🎵</a></li>
+    <li><a href="http://film.olei.me" target="_blank">在线影视🎬</a></li>
+    <li><a href="https://make.olei.me" target="_blank">网页制作💕</a></li>
+    <li><a href="http://bizhi.olei.me" target="_blank">精美壁纸👍</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="http://blog.olei.me" target="_blank">人生苦短，我爱技术❤️</a></li>
+    <li><a href="https://lwg1995.cn" target="_blank">记录生活点滴💧</a></li>
+  </ul>
+</div>
+
+
+<!--<a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Link with href
+</a>-->
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  外链获取方式
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+    <code>外链获取方式：点击表格中的链接跳转，复制浏览器中的链接，即为外链!</code>
+  </div>
+</div>
+
+
+  </div>
+    <div class="table-responsive">
+{#    <h3 class="text-center text-capitalize"><strong>bing每日美图分享</strong></h3>#}
+        <table class="table table-hover alpha1">
+            <thead>
+            <tr class="active">
+                <th colspan="4" style="text-align: center"><strong>bing每日美图分享</strong></th>
+            </tr>
+            <tr class="danger">
+                <td>日期</td>
+                <td>bing链接</td>
+                <td>七牛链接</td>
+                <td>图片名称以及地区</td>
+{#                <td>国家地区</td>#}
+            </tr>
+            </thead>
+            <tbody>
+            {% for bing in bings %}
+                <tr class="success">
+                    <td>{{ bing.dates }}</td>
+                    <td><a href="{{ bing.bing_url }}">bing外链</a></td>
+                    <td><a href="{{ bing.qiniu_url }}">七牛云公共外链</a></td>
+                    <td>{{ bing.image_name }}</td>
+{#                    <td>{{ bing.country }}</td>#}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+  </div>
+<!-- <div class="alert alert-info" role="alert">点击链接，进入，复制浏览器上方的链接，即为外链</div>-->
+ <div class="alert alert-warning alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Hello! boys or girls! 每日10点定时更新！</strong>点击链接，进入，复制浏览器上方的链接，即为外链
+</div>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

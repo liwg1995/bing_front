@@ -1,0 +1,8 @@
+- 获取图片在前台简单的展示页面，很简单，无分页等功能，我的是每天10点更新一波
+- 基于`django`来实现，说起实现也是侮辱了实现一词，这个功能很简单
+- 数据库使用`postgresql`
+- 前端用了`bootstrap`，没有考虑手机端的兼容性
+- 前端可以获取到bing以及七牛云的外链信息，还有图片的描述
+- 定时任务见这个项目[images_bing](https://github.com/liwg1995/images_bing)
+- [演示站点](https://bing.olei.me)
+- 加入了`nginx`配置以及`uwsgi`，`supervisor`的配置文件
